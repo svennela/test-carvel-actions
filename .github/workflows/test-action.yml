@@ -1,0 +1,17 @@
+name: test
+
+on:
+  pull_request:
+  push:
+    branches:
+      - develop
+      - 'releases/*'
+
+jobs:
+  test-carvel:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: vmware-tanzu/carvel-setup-action@v1
+      - run: |
+          ytt version
+          kbld version
