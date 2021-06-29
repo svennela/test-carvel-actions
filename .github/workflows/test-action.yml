@@ -16,4 +16,4 @@ jobs:
       - run: |
           imgpkg version
           ytt version
-          docker version
+          docker ps
